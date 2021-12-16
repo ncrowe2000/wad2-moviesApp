@@ -3,6 +3,8 @@ import PageTemplate from "../components/templateMovieListPage";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'
 import { getUpcomingMovies } from "../api/tmdb-api";
+import AddToWatchListIcon from '../components/cardIcons/addToWatchList'
+
 
 
 const UpcomingMoviesPage = (props) => {
@@ -26,7 +28,9 @@ const UpcomingMoviesPage = (props) => {
     <PageTemplate
       title="Upcoming Movies"
       movies={movies}
-
+      action={(movie) => {
+        return <AddToWatchListIcon movie={movie} />
+      }}
     />
   );
 };
