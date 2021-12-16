@@ -7,6 +7,7 @@ import AddToWatchListIcon from '../components/cardIcons/addToWatchList'
 
 
 
+
 const UpcomingMoviesPage = (props) => {
     const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcomingMovies)
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -20,8 +21,9 @@ const UpcomingMoviesPage = (props) => {
           }  
           const movies = data.results
 
-          const favorites = movies.filter(m => m.favorite)
-          localStorage.setItem('favorites', JSON.stringify(favorites))
+          const watchlists = movies.filter(m => m.watchlists)
+          localStorage.setItem('watchlists', JSON.stringify(watchlists))
+          const addToWatchLists = (movieId) => true 
           
 
   return (
