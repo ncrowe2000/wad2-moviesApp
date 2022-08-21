@@ -8,7 +8,7 @@ import AddToWatchListIcon from '../components/cardIcons/addToWatchList'
 
 
 
-const UpcomingMoviesPage = (props) => {
+const UpcomingMoviesPage = () => {
     const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcomingMovies)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     

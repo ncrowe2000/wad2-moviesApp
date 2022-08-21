@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews";
+import {Link} from "react-router-dom";
+import MovieIcon from '@material-ui/icons/Movie';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,6 +80,11 @@ const MovieDetails = ({ movie, action }) => {  // Don't miss this!
                   className={classes.chip} />
               </li>
           ))}
+      </Paper>
+      <Paper component="ul" className={classes.root}>
+       <Link to={`/movies/${movie.id}/similar`}>
+            <Chip label={"Similar Movies"} icon={<MovieIcon/>}/>
+          </Link>
       </Paper>
 
       <Fab
