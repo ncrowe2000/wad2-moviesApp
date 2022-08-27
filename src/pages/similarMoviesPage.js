@@ -6,9 +6,6 @@ import { getSimilarMovies } from "../api/tmdb-api";
 import { withRouter } from "react-router-dom";
 import AddToWatchListIcon from '../components/cardIcons/addToWatchList'
 
-
-
-
 const SimilarMoviesPage = (props) => {
   const { id } = props.match.params;
   // console.log(id)

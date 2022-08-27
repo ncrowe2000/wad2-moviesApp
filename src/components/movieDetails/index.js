@@ -12,6 +12,7 @@ import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews";
 import {Link} from "react-router-dom";
 import MovieIcon from '@material-ui/icons/Movie';
+import PersonIcon from '@material-ui/icons/Person'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -85,6 +86,9 @@ const MovieDetails = ({ movie, action }) => {  // Don't miss this!
        <Link to={`/movies/${movie.id}/similar`}>
             <Chip label={"Similar Movies"} icon={<MovieIcon/>}/>
           </Link>
+       <Link to={`/movies/${movie.id}/castmembers`}>
+            <Chip label={"Cast Members"} icon={<PersonIcon/>}/>
+       </Link>
       </Paper>
 
       <Fab
